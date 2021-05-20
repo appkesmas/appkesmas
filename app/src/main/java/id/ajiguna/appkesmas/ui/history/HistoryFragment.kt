@@ -9,23 +9,21 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ajiguna.appkesmas.R
+import id.ajiguna.appkesmas.databinding.FragmentHistoryBinding
+import id.ajiguna.appkesmas.databinding.FragmentHomeBinding
 
 class HistoryFragment : Fragment() {
 
     private lateinit var historyViewModel: HistoryViewModel
+    private lateinit var historyBinding: FragmentHistoryBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        historyViewModel =
-                ViewModelProvider(this).get(HistoryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_history, container, false)
-        val textView: TextView = root.findViewById(R.id.text_dashboard)
-        historyViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+
+        historyBinding = FragmentHistoryBinding.inflate(layoutInflater, container, false)
+        return historyBinding.root
     }
 }

@@ -9,23 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ajiguna.appkesmas.R
+import id.ajiguna.appkesmas.databinding.FragmentAccountsBinding
+import id.ajiguna.appkesmas.databinding.FragmentHistoryBinding
 
 class AccountsFragment : Fragment() {
 
     private lateinit var accountsViewModel: AccountsViewModel
+    private lateinit var accountsBinding: FragmentAccountsBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        accountsViewModel =
-                ViewModelProvider(this).get(AccountsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_accounts, container, false)
-        val textView: TextView = root.findViewById(R.id.text_notifications)
-        accountsViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
-        return root
+        accountsBinding = FragmentAccountsBinding.inflate(layoutInflater, container, false)
+        return accountsBinding.root
     }
 }
