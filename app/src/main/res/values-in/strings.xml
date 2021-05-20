@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Appkesmas</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_history">Riwayat</string>
+    <string name="title_account">Akun</string>
+    <string name="greeting">Halo</string>
+    <string name="what_do">Apa yang diperlukan?</string>
+    <string name="positive">Positif</string>
+    <string name="negative">Negatif</string>
+    <string name="last_covid">Update Terkini COVID - 19</string>
+    <string name="register">Daftar</string>
+    <string name="cancel">Batalkan</string>
+    <string name="number">Nomor</string>
+    <string name="wait_time">Waktu Tunggu</string>
+    <string name="queue_status">Status Antrian</string>
+    <string name="view_all">Lihat Semua</string>
+    <string name="verification">Verifikasi</string>
+    <string name="wait">Menunggu</string>
+    <string name="finish">Selesai</string>
+    <string name="queue_list">Daftar Antrian</string>
+
+</resources>

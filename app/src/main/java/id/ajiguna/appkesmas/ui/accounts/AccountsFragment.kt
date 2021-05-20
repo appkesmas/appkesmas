@@ -1,4 +1,4 @@
-package id.ajiguna.appkesmas.ui.home
+package id.ajiguna.appkesmas.ui.accounts
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,20 +9,20 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ajiguna.appkesmas.R
-import id.ajiguna.appkesmas.databinding.FragmentHomeBinding
+import id.ajiguna.appkesmas.databinding.FragmentAccountsBinding
+import id.ajiguna.appkesmas.databinding.FragmentHistoryBinding
 
-class HomeFragment : Fragment() {
+class AccountsFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private lateinit var homeBinding: FragmentHomeBinding
-
+    private lateinit var accountsViewModel: AccountsViewModel
+    private lateinit var accountsBinding: FragmentAccountsBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeBinding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-        return homeBinding.root
+        accountsBinding = FragmentAccountsBinding.inflate(layoutInflater, container, false)
+        return accountsBinding.root
     }
 }

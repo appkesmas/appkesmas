@@ -1,4 +1,4 @@
-package id.ajiguna.appkesmas.ui.home
+package id.ajiguna.appkesmas.ui.history
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,20 +9,21 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ajiguna.appkesmas.R
+import id.ajiguna.appkesmas.databinding.FragmentHistoryBinding
 import id.ajiguna.appkesmas.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment() {
+class HistoryFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
-    private lateinit var homeBinding: FragmentHomeBinding
-
+    private lateinit var historyViewModel: HistoryViewModel
+    private lateinit var historyBinding: FragmentHistoryBinding
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeBinding = FragmentHomeBinding.inflate(layoutInflater, container, false)
-        return homeBinding.root
+
+        historyBinding = FragmentHistoryBinding.inflate(layoutInflater, container, false)
+        return historyBinding.root
     }
 }
