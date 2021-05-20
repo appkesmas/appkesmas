@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Appkesmas</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_history">History</string>
+    <string name="title_account">Account</string>
+    <string name="greeting">Hello</string>
+    <string name="what_do">What do you want to do?</string>
+    <string name="positive">Positive</string>
+    <string name="negative">Negative</string>
+    <string name="last_covid">Latest Update on COVID - 19</string>
+    <string name="register">Register</string>
+    <string name="cancel">Cancel</string>
+    <string name="number">Number</string>
+    <string name="wait_time">Waiting Time</string>
+    <string name="queue_status">Queue Status</string>
+    <string name="view_all">View All</string>
+    <string name="verification">Verification</string>
+    <string name="wait">Waiting</string>
+    <string name="finish">Finish</string>
+    <string name="queue_list">Queue List</string>
 </resources>

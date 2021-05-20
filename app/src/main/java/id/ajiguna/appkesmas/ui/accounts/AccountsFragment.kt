@@ -1,4 +1,4 @@
-package id.ajiguna.appkesmas.ui.notifications
+package id.ajiguna.appkesmas.ui.accounts
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ajiguna.appkesmas.R
 
-class NotificationsFragment : Fragment() {
+class AccountsFragment : Fragment() {
 
-    private lateinit var notificationsViewModel: NotificationsViewModel
+    private lateinit var accountsViewModel: AccountsViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        notificationsViewModel =
-                ViewModelProvider(this).get(NotificationsViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_notifications, container, false)
+        accountsViewModel =
+                ViewModelProvider(this).get(AccountsViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_accounts, container, false)
         val textView: TextView = root.findViewById(R.id.text_notifications)
-        notificationsViewModel.text.observe(viewLifecycleOwner, Observer {
+        accountsViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
