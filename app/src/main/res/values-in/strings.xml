@@ -20,5 +20,8 @@
     <string name="wait">Menunggu</string>
     <string name="finish">Selesai</string>
     <string name="queue_list">Daftar Antrian</string>
+    <string name="time">Waktu</string>
+    <string name="title">Judul</string>
+    <string name="description">Deskripsi</string>
 
 </resources>
