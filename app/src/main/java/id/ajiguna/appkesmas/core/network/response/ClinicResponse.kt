@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class ClinicResponse (
+
    @field:SerializedName("address")
    val address: String? = null,
 

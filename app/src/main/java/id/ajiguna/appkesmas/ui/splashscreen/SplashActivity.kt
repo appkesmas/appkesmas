@@ -7,6 +7,7 @@ import android.view.animation.AnimationUtils
 import id.ajiguna.appkesmas.MainActivity
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.databinding.ActivitySplashBinding
+import id.ajiguna.appkesmas.ui.auth.LoginActivity
 
 class SplashActivity : AppCompatActivity() {
 
@@ -15,14 +16,14 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         splashBinding = ActivitySplashBinding.inflate(layoutInflater)
-        splashBinding.root
+        setContentView(splashBinding.root)
 
         val animation =
                 AnimationUtils.loadAnimation(this, R.anim.mytransition)
         splashBinding.icApp.startAnimation(animation)
         splashBinding.tvApp.startAnimation(animation)
         splashBinding.tvDesc.startAnimation(animation)
-        val i = Intent(this@SplashActivity, MainActivity::class.java)
+        val i = Intent(this@SplashActivity, LoginActivity::class.java)
         val timer: Thread = object : Thread() {
             override fun run() {
                 try {

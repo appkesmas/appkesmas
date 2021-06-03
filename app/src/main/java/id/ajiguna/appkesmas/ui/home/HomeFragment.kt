@@ -1,5 +1,6 @@
 package id.ajiguna.appkesmas.ui.home
 
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.TypedValue
@@ -15,13 +16,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
+import id.ajiguna.appkesmas.MainActivity
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.network.response.CovidResponse
 import id.ajiguna.appkesmas.core.utils.GridSpacingItemDecoration
 import id.ajiguna.appkesmas.databinding.FragmentHomeBinding
+import id.ajiguna.appkesmas.ui.clinic.ClinicActivity
 import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
+import id.ajiguna.appkesmas.ui.hospital.HospitalActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -47,6 +51,16 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (activity != null) {
             getCovid()
+
+            homeBinding.cvHospital.setOnClickListener {
+                val intent = Intent(activity, HospitalActivity::class.java)
+                startActivity(intent)
+            }
+
+            homeBinding.cvClinic.setOnClickListener {
+                val intent = Intent(activity, ClinicActivity::class.java)
+                startActivity(intent)
+            }
         }
     }
 
@@ -88,13 +102,11 @@ class HomeFragment : Fragment() {
             override fun onResponse(call: Call<List<CovidResponse>>, response: Response<List<CovidResponse>>) {
                 //Tulis code jika response sukses
                 if(response.code() == 200) {
-                    Toast.makeText(activity, "Ada data", Toast.LENGTH_SHORT).show()
                     homeBinding.tvPositive.text = response.body()?.get(0)?.positif
                     homeBinding.tvDied.text = response.body()?.get(0)?.meninggal
                 }
             }
             override fun onFailure(call: Call<List<CovidResponse>>, t: Throwable){
-                Toast.makeText(activity, "Belum ada data", Toast.LENGTH_SHORT).show()
             }
         })
     }

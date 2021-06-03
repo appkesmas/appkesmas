@@ -10,7 +10,7 @@
         android:id="@+id/rv_clinic"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/items_hospital"/>
+        tools:listitem="@layout/item_hospital"/>
 
     <ProgressBar
         android:id="@+id/progressBar"

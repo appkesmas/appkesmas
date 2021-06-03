@@ -6,36 +6,34 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
-import id.ajiguna.appkesmas.databinding.ItemsHospitalBinding
+import id.ajiguna.appkesmas.databinding.ItemClinicBinding
 import id.ajiguna.appkesmas.ui.detail.DetailActivity
+import id.ajiguna.appkesmas.ui.patient.RegisterPatientActivity
 
-class ClinicAdapter (private val users: ArrayList<ClinicResponse>) :
+class ClinicAdapter (private val clinics: ArrayList<ClinicResponse>) :
         RecyclerView.Adapter<ClinicAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val binding = ItemsHospitalBinding
+        val binding = ItemClinicBinding
                 .inflate(LayoutInflater.from(parent.context), parent, false)
 
         return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind(users[position])
+        holder.bind(clinics[position])
     }
 
-    override fun getItemCount(): Int = users?.size!!
+    override fun getItemCount(): Int = clinics.size
 
-    inner class ListViewHolder(private val binding: ItemsHospitalBinding) :
+    inner class ListViewHolder(private val binding: ItemClinicBinding) :
             RecyclerView.ViewHolder(binding.root) {
         fun bind(clinic: ClinicResponse) {
             with(binding) {
-//                Glide.with(itemView.context)
-//                        .load(clinic.avatarUrl)
-//                        .into(imgAvatar)
                 tvItemTitle.text = clinic.name
                 tvDescription.text = clinic.address
-                itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, DetailActivity::class.java)
+                btnQueue.setOnClickListener {
+                    val intent = Intent(itemView.context, RegisterPatientActivity::class.java)
                     intent.putExtra(DetailActivity.EXTRA_CONTENT, clinic)
                     itemView.context.startActivity(intent)
                 }

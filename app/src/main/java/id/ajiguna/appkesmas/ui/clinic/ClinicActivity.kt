@@ -2,8 +2,10 @@ package id.ajiguna.appkesmas.ui.clinic
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
+import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.databinding.ActivityClinicBinding
@@ -19,7 +21,10 @@ class ClinicActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         clinicBinding = ActivityClinicBinding.inflate(layoutInflater)
-        clinicBinding.root
+        setContentView(clinicBinding.root)
+
+        supportActionBar?.title = getString(R.string.clinic)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         clinicBinding.progressBar.visibility = View.VISIBLE
         ApiConfig.getApiService().getClinic()
@@ -45,4 +50,12 @@ class ClinicActivity : AppCompatActivity() {
                     }
                 })
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finish()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
 }

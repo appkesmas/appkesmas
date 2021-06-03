@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.databinding.ItemMostViewBinding
-import id.ajiguna.appkesmas.databinding.ItemsHospitalBinding
+import id.ajiguna.appkesmas.databinding.ItemHospitalBinding
 import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
 import id.ajiguna.appkesmas.ui.detail.DetailActivity
 

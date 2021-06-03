@@ -3,25 +3,29 @@ package id.ajiguna.appkesmas.ui.patient
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
 import id.ajiguna.appkesmas.core.network.response.RegisterResponse
-import id.ajiguna.appkesmas.databinding.ActivityDetailBinding
-import id.ajiguna.appkesmas.databinding.ActivityRegisterBinding
+import id.ajiguna.appkesmas.databinding.ActivityRegisterPatientBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import java.util.HashMap
 
-class RegisterActivity : AppCompatActivity() {
+class RegisterPatientActivity : AppCompatActivity() {
 
-    private lateinit var registerBinding: ActivityRegisterBinding
+    private lateinit var registerBinding: ActivityRegisterPatientBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        registerBinding = ActivityRegisterBinding.inflate(layoutInflater)
-        registerBinding.root
+        registerBinding = ActivityRegisterPatientBinding.inflate(layoutInflater)
+        setContentView(registerBinding.root)
+
+        supportActionBar?.title = getString(R.string.hospital)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         registerBinding.btnRegister.setOnClickListener { postLogin() }
     }
@@ -65,5 +69,12 @@ class RegisterActivity : AppCompatActivity() {
                 }
             })
 //        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            android.R.id.home -> finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

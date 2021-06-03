@@ -13,7 +13,8 @@
     <string name="description">Deskripsi</string>
     <string name="clinic">Puskesmas</string>
     <string name="hospital">Rumah Sakit</string>
-
+    <string name="list_receipt">Daftar Resep</string>
+    <string name="detail_receipt">Detail Resep</string>
     <string name="image_poster">gambar poster path content</string>
     <string name="image_backdrop">gambar backdrop path content</string>
     <string name="_0">0</string>
