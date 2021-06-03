@@ -3,19 +3,24 @@
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
     <string name="title_account">Account</string>
-    <string name="greeting">Hello</string>
     <string name="what_do">What do you want to do?</string>
     <string name="positive">Positive</string>
-    <string name="negative">Negative</string>
+    <string name="died">Died</string>
     <string name="last_covid">Latest Update on COVID - 19</string>
-    <string name="register">Register</string>
-    <string name="cancel">Cancel</string>
-    <string name="number">Number</string>
-    <string name="wait_time">Waiting Time</string>
-    <string name="queue_status">Queue Status</string>
-    <string name="view_all">View All</string>
-    <string name="verification">Verification</string>
-    <string name="wait">Waiting</string>
-    <string name="finish">Finish</string>
-    <string name="queue_list">Queue List</string>
+    <string name="title">Title</string>
+    <string name="description">Description</string>
+    <string name="clinic">Clinic</string>
+    <string name="hospital">Hospital</string>
+    <string name="list_receipt">List Receipt</string>
+    <string name="detail_receipt">Detail Receipt</string>
+    <string name="image_poster">image poster path content</string>
+    <string name="image_backdrop">image backdrop path content</string>
+    <string name="_0">0</string>
+
+    <string-array name="poli">
+        <item>Poli Umum</item>
+        <item>Poli Anak</item>
+        <item>Poli Gigi</item>
+        <item>Poli Penyakit Dalam</item>
+    </string-array>
 </resources>
