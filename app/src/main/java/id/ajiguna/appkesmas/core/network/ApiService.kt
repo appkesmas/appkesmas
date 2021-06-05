@@ -9,18 +9,22 @@ interface ApiService {
     @GET("puskesmas/")
     fun getClinic(): Call<List<ClinicResponse>>
 
-    @GET("hospital")
+    @GET("hospital/")
     fun getHospital(): Call<List<HospitalResponse>>
 
     @GET("indonesia/")
     fun getCovid(): Call<List<CovidResponse>>
-
 
     @GET("user/{id}")
     fun getUser(
         @Path("id") id: String,
     ): Call<UserResponse>
 
+
+    @GET("user/{id_user}/treatment/")
+    fun getHistory(
+        @Path("id_user") id: String,
+    ): Call<List<CovidResponse>>
 
 
     @FormUrlEncoded

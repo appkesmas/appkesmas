@@ -61,6 +61,10 @@ class AccountsFragment : Fragment() {
                 ) {
                     //Tulis code jika response sukses
                     if (response.code() == 200) {
+                        accountsBinding.shimmerFrameLayout.stopShimmer()
+                        accountsBinding. shimmerFrameLayout.visibility = View.GONE
+                        accountsBinding.lineInfo.visibility = View.VISIBLE
+
                         with(accountsBinding){
                             tvName.text = response.body()?.data?.name
                             tvKtp.text = response.body()?.data?.identityNumber
@@ -75,5 +79,15 @@ class AccountsFragment : Fragment() {
                 override fun onFailure(call: Call<UserResponse>, t: Throwable) {
                 }
             })
+    }
+
+    override fun onResume() {
+        super.onResume()
+        accountsBinding.shimmerFrameLayout.startShimmer()
+    }
+
+    override fun onPause() {
+        accountsBinding.shimmerFrameLayout.stopShimmer()
+        super.onPause()
     }
 }

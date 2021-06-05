@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
@@ -26,7 +27,6 @@ class ClinicActivity : AppCompatActivity() {
         supportActionBar?.title = getString(R.string.clinic)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        clinicBinding.progressBar.visibility = View.VISIBLE
         ApiConfig.getApiService().getClinic()
                 .enqueue(object :
                         Callback<List<ClinicResponse>> {
@@ -36,7 +36,9 @@ class ClinicActivity : AppCompatActivity() {
                     ) {
                         //Tulis code jika response sukses
                         if (response.code() == 200) {
-                            clinicBinding.progressBar.visibility = View.GONE
+                            clinicBinding.shimmerFrameLayout.stopShimmer()
+                            clinicBinding. shimmerFrameLayout.visibility = View.GONE
+                            clinicBinding.rvClinic.visibility = View.VISIBLE
                             list = response.body() as ArrayList<ClinicResponse>
                             clinicBinding.rvClinic.layoutManager =
                                     LinearLayoutManager(this@ClinicActivity)
@@ -47,6 +49,8 @@ class ClinicActivity : AppCompatActivity() {
                     }
 
                     override fun onFailure(call: Call<List<ClinicResponse>>, t: Throwable) {
+                        clinicBinding.shimmerFrameLayout.visibility = View.GONE
+                        Toast.makeText(this@ClinicActivity, "Something Went Wrong", Toast.LENGTH_LONG).show()
                     }
                 })
     }
@@ -58,4 +62,13 @@ class ClinicActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onResume() {
+        super.onResume()
+        clinicBinding.shimmerFrameLayout.startShimmer()
+    }
+
+    override fun onPause() {
+        clinicBinding.shimmerFrameLayout.stopShimmer()
+        super.onPause()
+    }
 }
