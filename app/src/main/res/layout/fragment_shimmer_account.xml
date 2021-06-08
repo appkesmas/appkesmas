@@ -43,7 +43,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
-            android:textColor="@android:color/black"
             android:fontFamily="@font/mulish_reg"/>
 
         <TextView
@@ -59,7 +58,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
-            android:textColor="@android:color/black"
             android:fontFamily="@font/mulish_reg"/>
 
         <TextView
@@ -75,7 +73,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
-            android:textColor="@android:color/black"
             android:fontFamily="@font/mulish_reg"/>
 
         <TextView
@@ -91,7 +88,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
-            android:textColor="@android:color/black"
             android:fontFamily="@font/mulish_reg"/>
 
         <TextView
@@ -107,7 +103,6 @@
             android:layout_height="50dp"
             android:layout_marginTop="8dp"
             android:background="@color/gray"
-            android:textColor="@android:color/black"
             android:fontFamily="@font/mulish_reg"/>
 
     </LinearLayout>

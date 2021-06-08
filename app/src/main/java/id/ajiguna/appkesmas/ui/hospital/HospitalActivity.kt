@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
+import id.ajiguna.appkesmas.core.network.response.ArticleResponse
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.network.response.HospitalResponse
 import id.ajiguna.appkesmas.core.utils.GridSpacingItemDecoration
@@ -29,7 +30,7 @@ class HospitalActivity : AppCompatActivity() {
     private lateinit var hospitalBinding: ActivityHospitalBinding
     private var list = ArrayList<HospitalResponse>()
 
-    private var listArticle = ArrayList<ClinicResponse>()
+    private var listArticle = ArrayList<ArticleResponse>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,25 +87,25 @@ class HospitalActivity : AppCompatActivity() {
         val snapHelper: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(hospitalBinding.rvArticle)
 
-        ApiConfig.getApiService().getClinic().enqueue(object :
-            Callback<List<ClinicResponse>> {
+        ApiConfig.getApiService().getArticle().enqueue(object :
+            Callback<List<ArticleResponse>> {
             override fun onResponse(
-                call: Call<List<ClinicResponse>>,
-                response: Response<List<ClinicResponse>>
+                call: Call<List<ArticleResponse>>,
+                response: Response<List<ArticleResponse>>
             ) {
                 //Tulis code jika response sukses
                 if (response.code() == 200) {
                     hospitalBinding.shimmerFrameArticle.stopShimmer()
                     hospitalBinding.shimmerFrameArticle.visibility = View.GONE
                     hospitalBinding.rvArticle.visibility = View.VISIBLE
-                    listArticle = response.body() as ArrayList<ClinicResponse>
+                    listArticle = response.body() as ArrayList<ArticleResponse>
                     val articleAdapter = ArticleAdapter(listArticle)
                     hospitalBinding.rvArticle.adapter = articleAdapter
 
                 }
             }
 
-            override fun onFailure(call: Call<List<ClinicResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<List<ArticleResponse>>, t: Throwable) {
                 Toast.makeText(this@HospitalActivity, "Belum ada data", Toast.LENGTH_SHORT).show()
             }
         })

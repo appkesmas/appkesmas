@@ -32,31 +32,12 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
 
         <TextView
-            android:id="@+id/tv_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Nomor Kartu Puskesmas"
-            app:layout_constraintTop_toBottomOf="@id/et_name"/>
-
-        <EditText
-            android:id="@+id/et_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:background="@drawable/blue_form"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_number"/>
-
-        <TextView
             android:id="@+id/tv_ktp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="KTP / SIM / Kartu Pelajar"
-            app:layout_constraintTop_toBottomOf="@id/et_number"/>
+            app:layout_constraintTop_toBottomOf="@id/et_name"/>
 
         <EditText
             android:id="@+id/et_ktp"
@@ -70,12 +51,31 @@
             app:layout_constraintTop_toBottomOf="@+id/tv_ktp"/>
 
         <TextView
+            android:id="@+id/tv_telp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="Nomor Telepon"
+            app:layout_constraintTop_toBottomOf="@id/et_ktp"/>
+
+        <EditText
+            android:id="@+id/et_telp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:background="@drawable/blue_form"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_telp"/>
+
+        <TextView
             android:id="@+id/tv_gender"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="Jenis Kelamin"
-            app:layout_constraintTop_toBottomOf="@id/et_ktp"/>
+            app:layout_constraintTop_toBottomOf="@id/et_telp"/>
 
         <RadioGroup
             android:id="@+id/radioGender"
@@ -86,12 +86,14 @@
             app:layout_constraintTop_toBottomOf="@id/tv_gender">
 
             <RadioButton
+                android:id="@+id/rb_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Male"
                 android:buttonTint="@color/purple_700"/>
 
             <RadioButton
+                android:id="@+id/rb_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:buttonTint="@color/purple_700"
@@ -100,12 +102,32 @@
         </RadioGroup>
 
         <TextView
+            android:id="@+id/tv_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="Umur"
+            app:layout_constraintTop_toBottomOf="@id/radioGender"/>
+
+        <EditText
+            android:id="@+id/et_age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:inputType="number"
+            android:textColor="@android:color/black"
+            android:background="@drawable/blue_form"
+            android:padding="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_age"/>
+
+        <TextView
             android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:text="Address"
-            app:layout_constraintTop_toBottomOf="@id/radioGender"/>
+            app:layout_constraintTop_toBottomOf="@id/et_age"/>
 
         <EditText
             android:id="@+id/et_address"
@@ -135,9 +157,39 @@
             android:background="@drawable/blue_form"
             app:layout_constraintTop_toBottomOf="@id/tv_assurance">
             <Spinner
+                android:id="@+id/sp_assurance"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
+                android:layout_margin="10dp"
+                android:entries="@array/asuransi"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/line_number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/line_assurance">
+
+            <TextView
+                android:id="@+id/tv_no_assurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"
+                android:text="Nomor Askes / BPJS"/>
+
+            <EditText
+                android:id="@+id/et_no_assurance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:inputType="number"
+                android:textColor="@android:color/black"
+                android:background="@drawable/blue_form"
+                android:padding="12dp"/>
         </LinearLayout>
 
         <Button
@@ -149,6 +201,6 @@
             android:textAllCaps="false"
             android:fontFamily="@font/mulish_reg"
             android:layout_margin="16dp"
-            app:layout_constraintTop_toBottomOf="@id/line_assurance"/>
+            app:layout_constraintTop_toBottomOf="@id/line_number"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>

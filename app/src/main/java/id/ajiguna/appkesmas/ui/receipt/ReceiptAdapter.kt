@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
+import id.ajiguna.appkesmas.core.network.response.ReceiptResponse
 import id.ajiguna.appkesmas.databinding.ItemClinicBinding
 import id.ajiguna.appkesmas.databinding.ItemReceiptBinding
 import id.ajiguna.appkesmas.ui.detail.DetailActivity
 import id.ajiguna.appkesmas.ui.patient.RegisterPatientActivity
 
-class ReceiptAdapter (private val receipts: ArrayList<ClinicResponse>) :
+class ReceiptAdapter (private val receipts: ArrayList<ReceiptResponse>) :
         RecyclerView.Adapter<ReceiptAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
@@ -29,13 +30,13 @@ class ReceiptAdapter (private val receipts: ArrayList<ClinicResponse>) :
 
     inner class ListViewHolder(private val binding: ItemReceiptBinding) :
             RecyclerView.ViewHolder(binding.root) {
-        fun bind(clinic: ClinicResponse) {
+        fun bind(receipt: ReceiptResponse) {
             with(binding) {
-                tvItemTitle.text = clinic.name
-                tvTime.text = clinic.address
+                tvItemTitle.text = receipt.puskesmas
+                tvTime.text = receipt.date
                 itemView.setOnClickListener {
-                    val intent = Intent(itemView.context, RegisterPatientActivity::class.java)
-                    intent.putExtra(DetailActivity.EXTRA_CONTENT, clinic)
+                    val intent = Intent(itemView.context, DetailReceiptActivity::class.java)
+                    intent.putExtra(DetailReceiptActivity.EXTRA_RECEIPT, receipt)
                     itemView.context.startActivity(intent)
                 }
             }

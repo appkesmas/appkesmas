@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SnapHelper
 import id.ajiguna.appkesmas.core.network.ApiConfig
+import id.ajiguna.appkesmas.core.network.response.BannerResponse
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.network.response.CovidResponse
 import id.ajiguna.appkesmas.core.utils.GridSpacingItemDecoration
@@ -31,14 +32,18 @@ import id.ajiguna.appkesmas.ui.hospital.HospitalActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 import kotlin.math.roundToInt
+
 
 class HomeFragment : Fragment() {
 
     private lateinit var homeViewModel: HomeViewModel
     private lateinit var homeBinding: FragmentHomeBinding
 
-    private var listMost = ArrayList<ClinicResponse>()
+    private var listMost = ArrayList<BannerResponse>()
 
     private lateinit var locationManager: LocationManager
     var lattitude: String? = null
@@ -98,31 +103,36 @@ class HomeFragment : Fragment() {
         val snapHelper: SnapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(homeBinding.rvMost)
 
-        ApiConfig.getApiService().getClinic().enqueue(object :
-            Callback<List<ClinicResponse>> {
+        ApiConfig.getApiService().getBanner().enqueue(object :
+            Callback<List<BannerResponse>> {
             override fun onResponse(
-                call: Call<List<ClinicResponse>>,
-                response: Response<List<ClinicResponse>>
+                call: Call<List<BannerResponse>>,
+                response: Response<List<BannerResponse>>
             ) {
                 //Tulis code jika response sukses
                 if (response.code() == 200) {
                     homeBinding.shimmerFrameMost.stopShimmer()
                     homeBinding.shimmerFrameMost.visibility = View.GONE
                     homeBinding.rvMost.visibility = View.VISIBLE
-                    listMost = response.body() as ArrayList<ClinicResponse>
+                    listMost = response.body() as ArrayList<BannerResponse>
                     val mostAdapter = MostAdapter(listMost)
                     homeBinding.rvMost.adapter = mostAdapter
 
                 }
             }
 
-            override fun onFailure(call: Call<List<ClinicResponse>>, t: Throwable) {
+            override fun onFailure(call: Call<List<BannerResponse>>, t: Throwable) {
                 Toast.makeText(activity, "Belum ada data", Toast.LENGTH_SHORT).show()
             }
         })
     }
 
     private fun getCovid(){
+        val calendar = Calendar.getInstance()
+        val simpleDateFormat = SimpleDateFormat("dd LLLL yyyy HH:mm")
+        val dateTime = simpleDateFormat.format(calendar.time).toString()
+        homeBinding.tvTime.text = dateTime
+
         ApiConfig.getApiCovid().getCovid().enqueue(object :
             Callback<List<CovidResponse>> {
             override fun onResponse(

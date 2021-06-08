@@ -18,4 +18,9 @@
     <string name="image_poster">gambar poster path content</string>
     <string name="image_backdrop">gambar backdrop path content</string>
     <string name="_0">0</string>
+    <string name="heal">Sembuh</string>
+    <string name="empty">Tidak ada Data</string>
+    <string name="skip">Lewati</string>
+    <string name="or">Atau</string>
+
 </resources>

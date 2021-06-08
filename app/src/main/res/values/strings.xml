@@ -16,11 +16,21 @@
     <string name="image_poster">image poster path content</string>
     <string name="image_backdrop">image backdrop path content</string>
     <string name="_0">0</string>
+    <string name="heal">Heal</string>
+    <string name="empty">No Data</string>
+    <string name="skip">Skip</string>
+    <string name="or">Or</string>
 
     <string-array name="poli">
         <item>Poli Umum</item>
         <item>Poli Anak</item>
         <item>Poli Gigi</item>
         <item>Poli Penyakit Dalam</item>
+    </string-array>
+
+    <string-array name="asuransi">
+        <item>Tidak Ada</item>
+        <item>Askes</item>
+        <item>BPJS</item>
     </string-array>
 </resources>

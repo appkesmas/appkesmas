@@ -15,16 +15,26 @@ interface ApiService {
     @GET("indonesia/")
     fun getCovid(): Call<List<CovidResponse>>
 
+    @GET("banner/")
+    fun getBanner(): Call<List<BannerResponse>>
+
+    @GET("article/")
+    fun getArticle(): Call<List<ArticleResponse>>
+
     @GET("user/{id}")
     fun getUser(
-        @Path("id") id: String,
+        @Path("id") id: String?,
     ): Call<UserResponse>
 
+    @GET("user/{id_user}/prescription/")
+    fun getReceiptUser(
+        @Path("id_user") id: String,
+    ): Call<List<ReceiptResponse>>
 
     @GET("user/{id_user}/treatment/")
     fun getHistory(
-        @Path("id_user") id: String,
-    ): Call<List<CovidResponse>>
+        @Path("id_user") id: String?,
+    ): Call<List<HistoryResponse>>
 
 
     @FormUrlEncoded
