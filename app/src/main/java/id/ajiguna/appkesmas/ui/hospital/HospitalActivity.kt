@@ -16,6 +16,7 @@ import id.ajiguna.appkesmas.core.network.ApiConfig
 import id.ajiguna.appkesmas.core.network.response.ArticleResponse
 import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.network.response.HospitalResponse
+import id.ajiguna.appkesmas.core.network.response.HospitaliResponse
 import id.ajiguna.appkesmas.core.utils.GridSpacingItemDecoration
 import id.ajiguna.appkesmas.databinding.ActivityHospitalBinding
 import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
@@ -28,7 +29,7 @@ import kotlin.math.roundToInt
 class HospitalActivity : AppCompatActivity() {
 
     private lateinit var hospitalBinding: ActivityHospitalBinding
-    private var list = ArrayList<HospitalResponse>()
+    private var list = ArrayList<HospitaliResponse>()
 
     private var listArticle = ArrayList<ArticleResponse>()
 
@@ -45,19 +46,19 @@ class HospitalActivity : AppCompatActivity() {
     }
 
     private fun getHospital() {
-        ApiConfig.getApiService().getHospital()
+        ApiConfig.getApiService().getHospitali()
             .enqueue(object :
-                Callback<List<HospitalResponse>> {
+                Callback<List<HospitaliResponse>> {
                 override fun onResponse(
-                    call: Call<List<HospitalResponse>>,
-                    response: Response<List<HospitalResponse>>
+                    call: Call<List<HospitaliResponse>>,
+                    response: Response<List<HospitaliResponse>>
                 ) {
                     //Tulis code jika response sukses
                     if (response.code() == 200) {
                         hospitalBinding.shimmerFrameLayout.stopShimmer()
                         hospitalBinding.shimmerFrameLayout.visibility = View.GONE
                         hospitalBinding.rvHospital.visibility = View.VISIBLE
-                        list = response.body() as ArrayList<HospitalResponse>
+                        list = response.body() as ArrayList<HospitaliResponse>
                         hospitalBinding.rvHospital.layoutManager =
                             LinearLayoutManager(this@HospitalActivity)
                         val listHospitalAdapter = HospitalAdapter(list)
@@ -66,7 +67,7 @@ class HospitalActivity : AppCompatActivity() {
                     }
                 }
 
-                override fun onFailure(call: Call<List<HospitalResponse>>, t: Throwable) {
+                override fun onFailure(call: Call<List<HospitaliResponse>>, t: Throwable) {
                     Toast.makeText(this@HospitalActivity, "g enek", Toast.LENGTH_SHORT).show()
                 }
             })

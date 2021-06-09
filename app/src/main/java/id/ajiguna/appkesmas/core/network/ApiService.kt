@@ -12,6 +12,9 @@ interface ApiService {
     @GET("hospital/")
     fun getHospital(): Call<List<HospitalResponse>>
 
+    @GET("hospital?latitude=-6.317546231739774&longitude=106.94013742650952&rs_type=0&count=10")
+    fun getHospitali(): Call<List<HospitaliResponse>>
+
     @GET("indonesia/")
     fun getCovid(): Call<List<CovidResponse>>
 
