@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="16dp"
+    tools:context=".ui.patient.RegisterPatientActivity">
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+    <TextView
+        android:layout_width="150dp"
+        android:layout_marginTop="16dp"
+        android:layout_height="wrap_content"
+        android:background="@color/gray"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:inputType="text"
+        android:backgroundTint="@color/gray"
+        android:textColor="@android:color/black"
+        android:background="@drawable/blue_form"
+        android:padding="12dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
+
+</LinearLayout>

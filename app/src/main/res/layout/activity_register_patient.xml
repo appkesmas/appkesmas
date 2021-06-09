@@ -7,189 +7,150 @@
     android:layout_height="match_parent"
     tools:context=".ui.patient.RegisterPatientActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_name"
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerFrameLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Full Name"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:background="@drawable/blue_form"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
-
-        <TextView
-            android:id="@+id/tv_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Nomor Kartu Puskesmas"
-            app:layout_constraintTop_toBottomOf="@id/et_name"/>
-
-        <EditText
-            android:id="@+id/et_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:inputType="text"
-            android:textColor="@android:color/black"
-            android:background="@drawable/blue_form"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_number"/>
-
-        <TextView
-            android:id="@+id/tv_ktp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="KTP / SIM / Kartu Pelajar"
-            app:layout_constraintTop_toBottomOf="@id/et_number"/>
-
-        <EditText
-            android:id="@+id/et_ktp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:inputType="number"
-            android:textColor="@android:color/black"
-            android:background="@drawable/blue_form"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_ktp"/>
-
-        <TextView
-            android:id="@+id/tv_gender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Jenis Kelamin"
-            app:layout_constraintTop_toBottomOf="@id/et_ktp"/>
-
-        <RadioGroup
-            android:id="@+id/radioGender"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginStart="16dp"
-            app:layout_constraintTop_toBottomOf="@id/tv_gender">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Male"
-                android:buttonTint="@color/purple_700"/>
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:buttonTint="@color/purple_700"
-                android:text="Female" />
-
-        </RadioGroup>
-
-        <TextView
-            android:id="@+id/tv_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Address"
-            app:layout_constraintTop_toBottomOf="@id/radioGender"/>
-
-        <EditText
-            android:id="@+id/et_address"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:inputType="text"
-            android:lines="6"
-            android:textColor="@android:color/black"
-            android:background="@drawable/blue_form"
-            android:padding="12dp"
-            app:layout_constraintTop_toBottomOf="@+id/tv_address"/>
-
-        <TextView
-            android:id="@+id/tv_assurance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Asuransi (Optional)"
-            app:layout_constraintTop_toBottomOf="@id/et_address"/>
-
-        <LinearLayout
-            android:id="@+id/line_assurance"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/blue_form"
-            app:layout_constraintTop_toBottomOf="@id/tv_assurance">
-            <Spinner
+            <!-- Adding rows of placeholders -->
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/tv_complaint"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Complaint"
-            app:layout_constraintTop_toBottomOf="@id/line_assurance"/>
+                <include layout="@layout/activity_shimmer_register_patient" />
 
-        <LinearLayout
-            android:id="@+id/line_complaint"
+            </LinearLayout>
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/blue_form"
-            app:layout_constraintTop_toBottomOf="@id/tv_complaint">
-            <Spinner
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-        </LinearLayout>
+                android:layout_margin="16dp"
+                android:text="@string/full_name"
+                app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-            android:id="@+id/tv_poli"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:text="Poli"
-            app:layout_constraintTop_toBottomOf="@id/line_complaint"/>
-
-        <LinearLayout
-            android:id="@+id/line_poli"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:background="@drawable/blue_form"
-            app:layout_constraintTop_toBottomOf="@id/tv_poli">
-            <Spinner
+            <EditText
+                android:id="@+id/et_names"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"/>
-        </LinearLayout>
+                android:layout_margin="16dp"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:background="@drawable/blue_form"
+                android:padding="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_name"/>
 
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/blue_btn"
-            android:text="Daftar Antrian"
-            android:textAllCaps="false"
-            android:fontFamily="@font/mulish_reg"
-            android:layout_margin="16dp"
-            app:layout_constraintTop_toBottomOf="@id/line_poli"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tv_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="Nomor Rekam Medis"
+                app:layout_constraintTop_toBottomOf="@id/et_names"/>
+
+            <EditText
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:inputType="text"
+                android:textColor="@android:color/black"
+                android:background="@drawable/blue_form"
+                android:padding="12dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_number"/>
+
+            <TextView
+                android:id="@+id/tv_complaint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/painscale"
+                app:layout_constraintTop_toBottomOf="@id/et_number"/>
+
+            <LinearLayout
+                android:id="@+id/line_pain_scale"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/blue_form"
+                app:layout_constraintTop_toBottomOf="@id/tv_complaint">
+                <Spinner
+                    android:id="@+id/sp_pain_scale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:entries="@array/painscale"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_immediacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/immediacy"
+                app:layout_constraintTop_toBottomOf="@id/line_pain_scale"/>
+
+            <LinearLayout
+                android:id="@+id/line_immediacy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/blue_form"
+                app:layout_constraintTop_toBottomOf="@id/tv_immediacy">
+                <Spinner
+                    android:id="@+id/sp_immediacy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:entries="@array/immediacy"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/temperature"
+                app:layout_constraintTop_toBottomOf="@id/line_immediacy"/>
+
+            <LinearLayout
+                android:id="@+id/line_pain_temperature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@drawable/blue_form"
+                app:layout_constraintTop_toBottomOf="@id/tv_temperature">
+                <Spinner
+                    android:id="@+id/sp_pain_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:entries="@array/temperature"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/blue_btn"
+                android:text="Daftar Antrian"
+                android:textAllCaps="false"
+                android:fontFamily="@font/mulish_reg"
+                android:layout_margin="16dp"
+                app:layout_constraintTop_toBottomOf="@id/line_pain_temperature"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

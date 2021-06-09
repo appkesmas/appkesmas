@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.antrian.AntrianActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_item_buton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="4dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="24dp"
+        android:padding="18dp"
+        app:cardElevation="4dp"
+        app:cardMaxElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/btn_process"
+            android:weightSum="4">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_daftar"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_register"/>
+
+                <TextView
+                    android:id="@+id/txt_daftar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="DAFTAR"
+                    android:fontFamily="@font/mulish_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_verifikasi"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_verification"/>
+
+                <TextView
+                    android:id="@+id/txt_verifikasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="VERIFIKASI"
+                    android:fontFamily="@font/mulish_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_menunggu"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_wait"/>
+
+                <TextView
+                    android:id="@+id/txt_menunggu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="MENUNGGU"
+                    android:fontFamily="@font/mulish_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/img_selesai"
+                    android:layout_width="80dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/ic_finish"/>
+
+                <TextView
+                    android:id="@+id/txt_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SELESAI"
+                    android:fontFamily="@font/mulish_bold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_wait_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "Waktu Tunggu"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        android:fontFamily="@font/mulish_reg"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/txt_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text= "00:00"
+        android:textSize="68sp"
+        android:textColor="@color/purple_700"
+        android:fontFamily="@font/ds_digi"/>
+
+    <TextView
+        android:id="@+id/txt_title_pendaftaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text= "Pendaftaran"
+        android:textColor="@android:color/black"
+        android:fontFamily="@font/mulish_bold"
+        android:layout_marginStart="20dp"/>
+
+    <TextView
+        android:id="@+id/txt_long_pendaftaran"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/mulish_reg"
+        android:text="@string/pendaftaran"/>
+
+    <TextView
+        android:id="@+id/txt_title_verifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:text="Verifikasi"
+        android:fontFamily="@font/mulish_bold"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/txt_long_verifikasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/mulish_reg"
+        android:text="@string/verifikasi"/>
+
+    <TextView
+        android:id="@+id/txt_title_menunggu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:text="Menunggu"
+        android:fontFamily="@font/mulish_bold"
+        android:textColor="@android:color/black"/>
+
+    <TextView
+        android:id="@+id/txt_long_menunggu"
+        android:layout_width="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/mulish_reg"
+        android:text="@string/menunggu"/>
+
+    <Button
+        android:id="@+id/btn_cancle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:text="Batalkan"
+        android:fontFamily="@font/mulish_reg"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/red"
+        android:textStyle="bold"
+        android:textColor="@color/white" />
+
+</LinearLayout>

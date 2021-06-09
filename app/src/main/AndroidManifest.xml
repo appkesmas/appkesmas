@@ -3,7 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="id.ajiguna.appkesmas">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -23,6 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="id.ajiguna.appkesmas.MainActivity" />
         </activity>
+        <activity android:name=".ui.antrian.AntrianActivity"/>
         <activity android:name=".ui.receipt.ReceiptActivity" />
         <activity android:name=".ui.auth.RegisterActivity" />
         <activity android:name=".ui.auth.LoginActivity" />
