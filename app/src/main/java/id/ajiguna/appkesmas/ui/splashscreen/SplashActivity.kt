@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.animation.AnimationUtils
-import id.ajiguna.appkesmas.MainActivity
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.databinding.ActivitySplashBinding
 import id.ajiguna.appkesmas.ui.auth.LoginActivity
