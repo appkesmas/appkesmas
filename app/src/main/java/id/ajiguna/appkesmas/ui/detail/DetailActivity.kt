@@ -4,11 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import id.ajiguna.appkesmas.R
-import id.ajiguna.appkesmas.core.network.response.HospitalResponse
 import id.ajiguna.appkesmas.core.network.response.HospitaliResponse
-import id.ajiguna.appkesmas.core.utils.Constants
 import id.ajiguna.appkesmas.databinding.ActivityDetailBinding
 import id.ajiguna.appkesmas.databinding.ContentDetailBinding
 

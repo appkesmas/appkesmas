@@ -25,13 +25,13 @@ class HistoryAdapter (private val hospitals: ArrayList<HistoryResponse>) :
             RecyclerView.ViewHolder(binding.root) {
         fun bind(history: HistoryResponse) {
             with(binding) {
-                tvItemTitle.text = history.startTime
-                tvDescription.text = history.puskesmasId
-                itemView.setOnClickListener {
-//                    val intent = Intent(itemView.context, DetailActivity::class.java)
-//                    intent.putExtra(DetailActivity.EXTRA_CONTENT, history)
-//                    itemView.context.startActivity(intent)
-                }
+                tvItemTitle.text = history.puskesmas?.name
+                tvDescription.text = history.puskesmas?.address
+//                itemView.setOnClickListener {
+////                    val intent = Intent(itemView.context, DetailActivity::class.java)
+////                    intent.putExtra(DetailActivity.EXTRA_CONTENT, history)
+////                    itemView.context.startActivity(intent)
+//                }
             }
         }
     }

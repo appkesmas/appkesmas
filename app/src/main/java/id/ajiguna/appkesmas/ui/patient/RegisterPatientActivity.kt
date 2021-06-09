@@ -113,13 +113,14 @@ class RegisterPatientActivity : AppCompatActivity() {
             ApiConfig.getApiService().postTreatment(params).enqueue(object :
                     Callback<TreadmentResponse> {
                 override fun onResponse(call: Call<TreadmentResponse>, response: Response<TreadmentResponse>) {
-                    if (response.code() == 201) {
-//                        loading.visibility = View.GONE
-                        val token = response.body()?.message
+                    if (response.code() == 200) {
+                        progressDialog?.dismiss()
+                        val idTreadment = response.body()?.data?.id
 
                         val intent = Intent(this@RegisterPatientActivity, AntrianActivity::class.java)
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
                         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                        intent.putExtra(AntrianActivity.EXTRA_QUEUE,idTreadment)
                         startActivity(intent)
                         finish()
 
@@ -127,6 +128,7 @@ class RegisterPatientActivity : AppCompatActivity() {
                 }
 
                 override fun onFailure(call: Call<TreadmentResponse>, t: Throwable) {
+                    progressDialog?.dismiss()
                     Toast.makeText(this@RegisterPatientActivity, "Gagal", Toast.LENGTH_SHORT).show()
                 }
             })
