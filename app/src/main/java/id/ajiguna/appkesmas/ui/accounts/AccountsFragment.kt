@@ -7,26 +7,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
-import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.network.response.UserResponse
 import id.ajiguna.appkesmas.core.utils.Session
-import id.ajiguna.appkesmas.databinding.ContentDetailBinding
 import id.ajiguna.appkesmas.databinding.ContentRegisterBinding
 import id.ajiguna.appkesmas.databinding.FragmentAccountsBinding
-import id.ajiguna.appkesmas.databinding.FragmentHistoryBinding
 import id.ajiguna.appkesmas.ui.auth.RegisterActivity
-import id.ajiguna.appkesmas.ui.clinic.ClinicActivity
-import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
-import id.ajiguna.appkesmas.ui.hospital.HospitalActivity
-import id.ajiguna.appkesmas.ui.receipt.DetailReceiptActivity
 import id.ajiguna.appkesmas.ui.receipt.ReceiptActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -93,6 +80,10 @@ class AccountsFragment : Fragment() {
                         accountsBinding.lineInfo.visibility = View.VISIBLE
 
                         with(accountsBinding){
+                            if (response.body()?.data?.bpjsNumber?.isEmpty() == true){
+                                tvBpjs.visibility = View.GONE
+                                tvNoBpjs.visibility = View.GONE
+                            }
                             tvNoMedis.text = response.body()?.data?.medicalId
                             tvNames.text = response.body()?.data?.name
                             tvNoKtp.text = response.body()?.data?.identityNumber

@@ -26,6 +26,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="id.ajiguna.appkesmas.MainActivity" />
         </activity>
+        <activity android:name=".ui.antrian.AntrianActivity"/>
         <activity android:name=".ui.receipt.ReceiptActivity" />
         <activity android:name=".ui.auth.RegisterActivity" />
         <activity android:name=".ui.auth.LoginActivity" />

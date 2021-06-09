@@ -21,11 +21,41 @@
     <string name="skip">Skip</string>
     <string name="or">Or</string>
 
+    <string name="pendaftaran">
+        Pendaftaran n/
+        Saat ini anda sudah berhasil melakukan pendaftaran ke RS/puskesmas yang dituju</string>
+    <string name="verifikasi">Saat ini status pendaftaran anda telah diverifikasi oleh administrator RS/Puskesmas yang dituju</string>
+    <string name="menunggu">Saat ini anda dapat menunggu sesuai dengan durasi waktu yang telah ditentukan</string>
+    <string name="immediacy">Immediacy</string>
+    <string name="painscale">Painscale</string>
+    <string name="temperature">Temperature</string>
+    <string name="full_name">Full Name</string>
+
+
     <string-array name="poli">
         <item>Poli Umum</item>
         <item>Poli Anak</item>
         <item>Poli Gigi</item>
         <item>Poli Penyakit Dalam</item>
+    </string-array>
+
+    <string-array name="painscale">
+        <item>Painless</item>
+        <item>Pain</item>
+        <item>Very Pain</item>
+    </string-array>
+
+    <string-array name="immediacy">
+        <item>Immediate</item>
+        <item>Emergent</item>
+        <item>Urgent</item>
+        <item>Semi-urgent</item>
+        <item>Non Urgent</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>Normal</item>
+        <item>Hot</item>
     </string-array>
 
     <string-array name="asuransi">

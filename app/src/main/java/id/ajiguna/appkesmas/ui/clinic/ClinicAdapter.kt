@@ -34,7 +34,7 @@ class ClinicAdapter (private val clinics: ArrayList<ClinicResponse>) :
                 tvDescription.text = clinic.address
                 btnQueue.setOnClickListener {
                     val intent = Intent(itemView.context, RegisterPatientActivity::class.java)
-                    intent.putExtra(DetailActivity.EXTRA_CONTENT, clinic)
+                    intent.putExtra(RegisterPatientActivity.EXTRA_ID, clinic.id)
                     itemView.context.startActivity(intent)
                 }
             }

@@ -10,4 +10,6 @@
     <color name="btn_red">#F34B4B</color>
     <color name="btn_green">#00A352</color>
     <color name="gray">#dddddd</color>
+    <color name="red">#B61E13</color>
+    <color name="btn_process">#F9F8F8</color>
 </resources>

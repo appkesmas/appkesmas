@@ -6,7 +6,6 @@ import android.os.Bundle
 import id.ajiguna.appkesmas.MainActivity
 import id.ajiguna.appkesmas.core.utils.Session
 import id.ajiguna.appkesmas.databinding.ActivityLoginBinding
-import id.ajiguna.appkesmas.ui.patient.RegisterPatientActivity
 
 class LoginActivity : AppCompatActivity() {
 

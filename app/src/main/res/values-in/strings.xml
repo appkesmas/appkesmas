@@ -23,4 +23,33 @@
     <string name="skip">Lewati</string>
     <string name="or">Atau</string>
 
+    <string name="pendaftaran">
+        Pendaftaran n/
+        Saat ini anda sudah berhasil melakukan pendaftaran ke RS/puskesmas yang dituju</string>
+    <string name="verifikasi">Saat ini status pendaftaran anda telah diverifikasi oleh administrator RS/Puskesmas yang dituju</string>
+    <string name="menunggu">Saat ini anda dapat menunggu sesuai dengan durasi waktu yang telah ditentukan</string>
+    <string name="immediacy">Urgensi Penanganan</string>
+    <string name="painscale">Skala Rasa Sakit</string>
+    <string name="temperature">Suhu</string>
+    <string name="full_name">Nama</string>
+
+    <string-array name="painscale">
+        <item>Tanpa Rasa Sakit</item>
+        <item>Sakit</item>
+        <item>Sangat Sakit</item>
+    </string-array>
+
+    <string-array name="immediacy">
+        <item>Segera</item>
+        <item>Emergen</item>
+        <item>Mendesak</item>
+        <item>Setengah mendesak</item>
+        <item>Tidak mendesak</item>
+    </string-array>
+
+    <string-array name="temperature">
+        <item>Normal</item>
+        <item>Panas</item>
+    </string-array>
+
 </resources>

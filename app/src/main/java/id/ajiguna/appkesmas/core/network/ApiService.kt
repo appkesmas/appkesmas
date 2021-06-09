@@ -26,6 +26,11 @@ interface ApiService {
         @Path("id") id: String?,
     ): Call<UserResponse>
 
+    @GET("treatment/{id}")
+    fun getQueue(
+        @Path("id") id: String?,
+    ): Call<QueueResponse>
+
     @GET("user/{id_user}/prescription/")
     fun getReceiptUser(
         @Path("id_user") id: String,
@@ -36,10 +41,16 @@ interface ApiService {
         @Path("id_user") id: String?,
     ): Call<List<HistoryResponse>>
 
-
     @FormUrlEncoded
     @POST("user/")
     fun postRegister(
             @FieldMap params: HashMap<String, String>?
     ): Call<RegisterResponse>
+
+    @FormUrlEncoded
+    @POST("treatment/")
+    fun postTreatment(
+        @FieldMap params: HashMap<String, String>?
+    ): Call<TreadmentResponse>
+
 }

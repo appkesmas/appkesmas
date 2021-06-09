@@ -1,18 +1,12 @@
 package id.ajiguna.appkesmas.ui.hospital
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import id.ajiguna.appkesmas.core.network.response.ArticleResponse
-import id.ajiguna.appkesmas.core.network.response.ClinicResponse
 import id.ajiguna.appkesmas.core.utils.Constants
 import id.ajiguna.appkesmas.databinding.ItemArticleBinding
-import id.ajiguna.appkesmas.databinding.ItemMostViewBinding
-import id.ajiguna.appkesmas.databinding.ItemHospitalBinding
-import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
-import id.ajiguna.appkesmas.ui.detail.DetailActivity
 
 class ArticleAdapter (private val users: ArrayList<ArticleResponse>) :
         RecyclerView.Adapter<ArticleAdapter.ListViewHolder>() {
