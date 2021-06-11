@@ -56,19 +56,37 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_item_title"
         tools:text="@string/description" />
 
-    <TextView
-        android:id="@+id/tv_range"
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:gravity="start"
-        android:maxLines="4"
-        android:textSize="12sp"
-        android:fontFamily="@font/mulish_reg"
-        android:textColor="@android:color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_item_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_description"
-        tools:text="6 M" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_description">
+
+        <TextView
+            android:id="@+id/tv_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            android:maxLines="4"
+            android:textSize="12sp"
+            android:fontFamily="@font/mulish_reg"
+            android:textColor="@android:color/black"
+            tools:text="6 M" />
+
+        <TextView
+            android:id="@+id/tv_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            android:maxLines="4"
+            android:textSize="12sp"
+            android:fontFamily="@font/mulish_reg"
+            android:textColor="@android:color/black"
+            tools:text="Kelas : A" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,11 +5,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.response.HospitalResponse
 import id.ajiguna.appkesmas.core.network.response.HospitaliResponse
 import id.ajiguna.appkesmas.core.utils.Constants
 import id.ajiguna.appkesmas.databinding.ItemHospitalBinding
 import id.ajiguna.appkesmas.ui.detail.DetailActivity
+import java.math.RoundingMode
 
 class HospitalAdapter (private val hospitals: ArrayList<HospitaliResponse>) :
         RecyclerView.Adapter<HospitalAdapter.ListViewHolder>() {
@@ -35,6 +37,9 @@ class HospitalAdapter (private val hospitals: ArrayList<HospitaliResponse>) :
                         .into(imgPoster)
                 tvItemTitle.text = hospital.namaRS
                 tvDescription.text = hospital.wilayah
+                val range = hospital.jarak?.toBigDecimal()?.setScale(1, RoundingMode.UP)?.toDouble()
+                tvRange.text = range.toString() + " Km"
+                tvClass.text = "Kelas "+ hospital.kelas
                 itemView.setOnClickListener {
                     val intent = Intent(itemView.context, DetailActivity::class.java)
                     intent.putExtra(DetailActivity.EXTRA_CONTENT, hospital)
