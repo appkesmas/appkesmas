@@ -14,13 +14,9 @@ import androidx.recyclerview.widget.SnapHelper
 import id.ajiguna.appkesmas.R
 import id.ajiguna.appkesmas.core.network.ApiConfig
 import id.ajiguna.appkesmas.core.network.response.ArticleResponse
-import id.ajiguna.appkesmas.core.network.response.ClinicResponse
-import id.ajiguna.appkesmas.core.network.response.HospitalResponse
 import id.ajiguna.appkesmas.core.network.response.HospitaliResponse
 import id.ajiguna.appkesmas.core.utils.GridSpacingItemDecoration
 import id.ajiguna.appkesmas.databinding.ActivityHospitalBinding
-import id.ajiguna.appkesmas.ui.clinic.ClinicAdapter
-import id.ajiguna.appkesmas.ui.home.MostAdapter
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
